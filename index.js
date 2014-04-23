@@ -5,11 +5,10 @@ module.exports = function(assemble) {
     assemble.log.debug('\t[plugin]: ', 'drafts', params.event);
     assemble.log.debug('\t[params]:', params);
 
-    for(var page in assemble.pages) {
-      var meta = assemble.pages[page].metadata;
-      if (meta.published === false || meta.draft === true) {
-        delete assemble.pages[page];
-      }
+    var meta = params.page.metadata;
+    if (meta.published === false || meta.draft === true) {
+      var key = params.page.name || params.page.src || 'page_' + (meta.index + 1);
+      delete assemble.pages[key];
     }
     done();
   };
@@ -17,7 +16,7 @@ module.exports = function(assemble) {
   plugin.options = {
     name: 'assemble-drafts',
     description: 'Core plugin for excluding pages from rendering.',
-    events: ['page:before:build']
+    events: ['page:after:build']
   };
 
   var config = {};

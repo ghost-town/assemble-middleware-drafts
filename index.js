@@ -5,7 +5,7 @@ module.exports = function(assemble) {
     assemble.log.debug('\t[plugin]: ', 'drafts', params.event);
     assemble.log.debug('\t[params]:', params);
 
-    var meta = params.page.metadata;
+    var meta = params.page.data;
     if (meta.published === false || meta.draft === true) {
       var key = params.page.name || params.page.src || 'page_' + (meta.index + 1);
       delete assemble.pages[key];

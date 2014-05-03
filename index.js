@@ -1,8 +1,13 @@
 'use strict';
 
+
 module.exports = function(assemble) {
+
+
+  // The plugin
   var plugin = function (params, done) {
-    assemble.log.debug('\t[plugin]: ', 'drafts', params.event);
+    // logging
+    assemble.log.debug('\t[plugin]: ', 'assemble-middleware-drafts', params.event);
     assemble.log.debug('\t[params]:', params);
 
     var meta = params.page.data;
@@ -13,13 +18,11 @@ module.exports = function(assemble) {
     done();
   };
 
-  plugin.options = {
-    name: 'assemble-drafts',
-    description: 'Core plugin for excluding pages from rendering.',
-    events: ['page:after:build']
-  };
 
-  var config = {};
-  config[plugin.options.name] = plugin;
-  return config;
+  // Define the event to use
+  middleware.event = 'page:after:build';
+  return {
+    'assemble-middleware-drafts': middleware
+  };
 };
+

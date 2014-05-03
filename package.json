@@ -1,44 +1,49 @@
 {
-  "name": "assemble-contrib-drafts",
-  "description": "Assemble plugin (v0.5.0) for preventing drafts from being built.",
-  "version": "0.1.2",
-  "homepage": "https://github.com/assemble/assemble-contrib-drafts",
+  "name": "assemble-middleware-drafts",
+  "description": "Assemble middleware (v0.5.0) for preventing drafts from being rendered.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/assemble/assemble-middleware-drafts",
   "author": {
     "name": "Jon Schlinkert",
-    "url": "https://github.com/assemble"
+    "url": "https://github.com/jonschlinkert"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/assemble/assemble-contrib-drafts.git"
+    "url": "git://github.com/assemble/assemble-middleware-drafts.git"
   },
   "bugs": {
-    "url": "https://github.com/assemble/assemble-contrib-drafts/issues"
+    "url": "https://github.com/assemble/assemble-middleware-drafts/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/assemble-contrib-drafts/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/assemble-middleware-drafts/blob/master/LICENSE-MIT"
     }
   ],
   "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
+    "assemble",
+    "assemblemiddleware",
+    "author",
+    "blog",
+    "draft",
+    "drafts",
+    "middleware",
+    "page",
+    "pages",
+    "plugin",
+    "post",
+    "publish"
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha -R spec"
   },
   "devDependencies": {
-    "verb": "~0.2.0",
     "chai": "~1.9.1",
-    "mocha": "~1.18.2"
+    "mocha": "~1.18.2",
+    "verb": "~0.2.6"
   }
 }

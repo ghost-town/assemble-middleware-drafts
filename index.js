@@ -5,7 +5,7 @@ module.exports = function(assemble) {
 
 
   // The plugin
-  var plugin = function (params, done) {
+  var plugin = function (params, next) {
     // logging
     assemble.log.debug('\t[plugin]: ', 'assemble-middleware-drafts', params.event);
     assemble.log.debug('\t[params]:', params);
@@ -15,7 +15,7 @@ module.exports = function(assemble) {
       var key = params.page.name || params.page.src || 'page_' + (meta.index + 1);
       delete assemble.pages[key];
     }
-    done();
+    next();
   };
 
 

@@ -2,12 +2,8 @@
 
 
 module.exports = function(assemble) {
-
-
-  // The plugin
-  var plugin = function (params, next) {
-    // logging
-    assemble.log.debug('\t[plugin]: ', 'assemble-middleware-drafts', params.event);
+  var middlware = function (params, next) {
+    assemble.log.debug('\t[middlware]: ', 'assemble-middleware-drafts', params.event);
     assemble.log.debug('\t[params]:', params);
 
     var meta = params.page.data;

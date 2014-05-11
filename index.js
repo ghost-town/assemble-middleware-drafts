@@ -2,8 +2,8 @@
 
 
 module.exports = function(assemble) {
-  var middlware = function (params, next) {
-    assemble.log.debug('\t[middlware]: ', 'assemble-middleware-drafts', params.event);
+  var middleware = function (params, next) {
+    assemble.log.debug('\t[middleware]: ', 'assemble-middleware-drafts', params.event);
     assemble.log.debug('\t[params]:', params);
 
     var meta = params.page.data;
